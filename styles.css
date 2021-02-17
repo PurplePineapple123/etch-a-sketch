@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    background-color: aqua;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+    padding: 15px;
+}
+
+/* begin CSS styling */
+
+#main-content {
+
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#description-container {
+    background-color: orange;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#button-container {
+    background-color: green;
+
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+}
+
+#grid-container {
+    background-color: rgb(156, 149, 136);
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.divRow {
+    display: flex;
+    width:100%;
+    height:100%;
+    margin-top: 1px;
+
+
+}
+
+.divCol {
+    flex: auto;
+    border-right: 1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}  
+
+
+/* .divRow {
+    width: 100%;
+    height: 100%;
+}
+
+.divCol {
+    display: flex;
+    flex: 1 auto;
+    border: 1px solid black;
+     */
+    
+    /* float: left;
+    height: 25px;
+    border-right: 1px solid #ccc;
+    border-bottom:1px solid #ccc;
+        width: 25px; */
+}
+
+
+
+
