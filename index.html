@@ -25,13 +25,21 @@
             </div>
 
             <div id="button-container">
-                <button>Black</button>
-                <button>Pschedelic</button>
+                <button id="black-button">Black</button>
+                <button id="psych-button">Pschedelic</button>
                 <div><!--This is where the user will be able to pick the color of their choice--></div>
-                <div><!--this is where the slider to chnage grid size will go--></div>
-                <button id="sixteenGrid" >Normal</button>
-                <button id="fourtyGrid">Large</button>
-                <button>Erase</button>
+                <div class="sliderContainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                
+                
+                
+                <!-- <button id="sixteenGrid" >Normal</button>
+                <button id="fourtyGrid">Large</button> -->
+
+
+
+                <button id="erase-button">Erase</button>
             </div>
 
             <div id="grid-container">
