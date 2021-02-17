@@ -14,7 +14,7 @@ function createGrid(widthHeight){
             divCol.classList.add(`divCol`);
 
             //add color changing functions here
-
+            
             //default hover
             divCol.addEventListener("mouseenter", function(){
                 this.style.backgroundColor = `black`;
@@ -34,6 +34,15 @@ function createGrid(widthHeight){
                 });
             });
 
+            //Choose color button
+            //if
+            document.getElementById(`chooseColor`).addEventListener(`input`, function() {
+                divCol.addEventListener("mouseenter", function(){
+                    this.style.backgroundColor = `${chooseColor()}`;
+                });
+            }, false);
+
+
             //eraser button
 
             document.getElementById(`erase-button`).addEventListener(`click`, function() {
@@ -41,13 +50,19 @@ function createGrid(widthHeight){
                     this.style.backgroundColor = `rgb(156, 149, 136)`;
                 });
             });
-
             divRow.appendChild(divCol);
         }
     }
-
-
 }
+
+createGrid(3);
+
+
+
+
+
+
+
 
 // slider.oninput = function changeGridSize() {
 //     let sliderValue = document.getElementById(`myRange`);
@@ -68,12 +83,22 @@ function createGrid(widthHeight){
 
 
 
+//return the color choosen by the user
+function chooseColor(){
+  let color = document.getElementById(`chooseColor`).value;
+    console.log(color);
+    return color;
+}
 
-createGrid(7);
 
 //returns random colors for psychedleic button
 function randomColor() {
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     console.log(randomColor);
+
     return randomColor;
+}
+
+function resetButton() {
+
 }
