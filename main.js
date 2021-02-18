@@ -15,8 +15,8 @@ function createGrid(widthHeight){
 
             //default hover
             divCol.addEventListener("mouseenter", function(){
-                this.classList.add(`black-button`);
-                this.classList.remove(`psych-button`);
+                this.style.backgroundColor = `black`;
+
             });
 
 
