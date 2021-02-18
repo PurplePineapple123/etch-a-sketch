@@ -1,3 +1,7 @@
+let color = "";
+let psychColor = false;
+
+
 //Generate grid to size of user input
 
 function createGrid(widthHeight){
@@ -11,49 +15,23 @@ function createGrid(widthHeight){
             let divCol = document.createElement(`div`);
             divCol.classList.add(`divCol`);
             divRow.appendChild(divCol);
-
-
-            //default hover
-            divCol.addEventListener("mouseenter", function(){
-                this.style.backgroundColor = `black`;
-
+            divCol.addEventListener(`mouseenter`, function(){
+                if (psychColor) {
+                    color = `#${randomColor()}`;
+                }
+                
+                this.style.backgroundColor = color;
             });
 
+            // //default hover
+            // divCol.addEventListener("mouseenter", function(){
+            //     this.style.backgroundColor = `black`;
 
-            //black button
-            document.getElementById(`black-button`).addEventListener(`click`, function() {
-                divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `black`;
+            // });
 
+           
 
-                });
-            });
-
-            //psychedlic button selection
-
-            document.getElementById(`psych-button`).addEventListener(`click`, function() {
-                divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `#${randomColor()}`;
-                });
-            });
-
-            //Choose color button
-
-            document.getElementById(`chooseColor`).addEventListener(`input`, function() {
-                divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `${chooseColor()}`;
-                });
-            }, false);
-
-
-            //eraser button
-
-            document.getElementById(`erase-button`).addEventListener(`click`, function() {
-                divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `rgb(156, 149, 136)`;
-
-                });
-            }); 
+            
         }  
     }
 }
@@ -77,9 +55,44 @@ function randomColor() {
 
 
 
+  //black button
+  document.getElementById(`black-button`).addEventListener(`click`, function() {
+      psychColor = false;
+      color = `black`;
+    });
+
+
+ //psychedlic button selection
+    document.getElementById(`psych-button`).addEventListener(`click`, function() {
+        psychColor = true;
+        
+        });
+
+
+    //eraser button
+
+    document.getElementById(`erase-button`).addEventListener(`click`, function() {
+        psychColor = false;
+        color = `rgb(156, 149, 136)`;
+
+    }); 
 
 
 
+//Choose color button
+
+document.getElementById(`chooseColor`).addEventListener(`input`, function() {
+    psychColor = false;
+    
+    color = chooseColor();
+}, false);
 
 
+// //eraser button
 
+// document.getElementById(`erase-button`).addEventListener(`click`, function() {
+//     divCol.addEventListener("mouseenter", function(){
+//         this.style.backgroundColor = `rgb(156, 149, 136)`;
+
+//     });
+// }); 
