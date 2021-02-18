@@ -92,10 +92,14 @@ span {
     opacity: 0;
     transition: all .5s ease;
     color: white;
+    transform: translateY(10px);
+
 }
 
 span.fade{
     opacity: 1;
+    transform: translateY(-1px);
+
 
 }
 

@@ -15,17 +15,12 @@ function beginningAnimation() {
     desc1.classList.add(`animate`);
 
 
-textAnimate();
+    textAnimate();
 
 
 
 
 }
-
-
-
-
-
 
 function textAnimate() {
 let text = document.querySelector(`.animate`);
@@ -60,10 +55,6 @@ function complete() {
     timer = null;
 }
 }
-
-
-
-
 
 
 
@@ -171,3 +162,37 @@ slider.oninput = function() {
 
 //default grid size
 createGrid(25);
+
+
+//psych-button change color on hover
+
+document.getElementById(`psych-button`).addEventListener(`mouseover`, function () {
+    console.log(`hello`);
+});
+
+
+
+function repeatWhileMouseOver(element, action, milliseconds) {
+    let interval = null;
+    element.addEventListener('mouseover', function () {
+        interval = setInterval(action, milliseconds);
+    });
+
+    element.addEventListener('mouseout', function () {
+        clearInterval(interval);
+    });
+}
+
+
+
+function psychBackground() {
+    let button = document.getElementById(`psych-button`);
+    button.style.backgroundColor = `#${randomColor()}`;
+    console.log(button);
+}
+
+
+repeatWhileMouseOver(document.getElementById('psych-button'), psychBackground, 100);
+
+
+
