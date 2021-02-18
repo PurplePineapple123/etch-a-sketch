@@ -3,6 +3,7 @@ let psychColor = false;
 
 //animating initial text
 
+function textAnimate(textId) {
 const text = document.querySelector(`.animate`);
 const strText = text.textContent;
 const splitText = strText.split("");
@@ -15,11 +16,10 @@ for (let i=0; i < splitText.length; i++) {
 
 }
 
-
 //inserting letters one by one
 
 let char = 0;
-let timer = setInterval(onTick, 50);
+let timer = setInterval(onTick, 100);
 
 function onTick() {
     const span = text.querySelectorAll(`span`)[char];
@@ -35,8 +35,9 @@ function complete() {
     clearInterval(timer); //does this need to be its own function?
     timer = null;
 }
+}
 
-
+textAnimate();
 
 
 
