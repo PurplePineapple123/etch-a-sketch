@@ -68,15 +68,69 @@ button {
     margin-right: auto;
     text-align: center;
     margin-top: 3%;
+    font-family: 'Pacifico', cursive;
 }
+
+#title {
+    font-size: 50px;
+}
+
+/* animations begin */
+
+span {
+    opacity: 0;
+    transition: all 0.4s ease;
+    color: white;
+}
+
+span.fade{
+    opacity: 1;
+
+}
+
+
+.revealMain {
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+.hideMain {
+    opacity: 1;
+    animation: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    to{
+        opacity: 0;
+    }
+}
+
+
+/* animations end */
+
+
 
 #button-container {
     background-color: green;
-
-    margin-left: auto;
+    width: 600px;
     margin-right: auto;
-    display: inline-flex;
+    margin-left: auto;
+    display: flex;
     margin-top: 1%;
+    justify-content: space-between;
+
 }
 
 #grid-container {
@@ -105,7 +159,10 @@ button {
     margin-right: 1px;
 }  
 
-
+#customColor {
+    display: flex;
+    align-items: center;
+}
 
 
 

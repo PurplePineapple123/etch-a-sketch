@@ -1,6 +1,47 @@
 let color = "";
 let psychColor = false;
 
+//animating initial text
+
+const text = document.querySelector(`.animate`);
+const strText = text.textContent;
+const splitText = strText.split("");
+text.textContent = "";
+
+console.log(splitText);
+
+for (let i=0; i < splitText.length; i++) {
+    text.innerHTML += "<span>"+ splitText[i] + "</span>";
+
+}
+
+
+//inserting letters one by one
+
+let char = 0;
+let timer = setInterval(onTick, 50);
+
+function onTick() {
+    const span = text.querySelectorAll(`span`)[char];
+    span.classList.add(`fade`);
+    char++;
+    if(char === splitText.length){
+        complete();
+        return;
+    }
+}
+
+function complete() {
+    clearInterval(timer); //does this need to be its own function?
+    timer = null;
+}
+
+
+
+
+
+
+
 
 //Generate grid to size of user input
 
