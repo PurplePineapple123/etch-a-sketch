@@ -13,29 +13,37 @@ function createGrid(widthHeight){
             let divCol = document.createElement(`div`);
             divCol.classList.add(`divCol`);
 
-            //add color changing functions here
-            
+
             //default hover
-            divCol.addEventListener("mouseenter", function(){
-                this.style.backgroundColor = `black`;
-            });
+            // divCol.addEventListener("mouseenter", function(){
+            //     this.style.backgroundColor = `black`;
+            // });
+
 
             //black button
             document.getElementById(`black-button`).addEventListener(`click`, function() {
                 divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `black`;
-                });
-            });
-            
-            //psychedlic button selection
-            document.getElementById(`psych-button`).addEventListener(`click`, function() {
-                divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `#${randomColor()}`;
+                    this.classList.add(`black-button`);
+                    this.classList.remove(`psych-button`);
+
                 });
             });
 
+            //psychedlic button selection
+
+            document.getElementById(`psych-button`).addEventListener(`click`, function() {
+                divCol.addEventListener("mouseenter", function(){
+                    //this.style.backgroundColor = `#${randomColor()}`;
+                    this.classList.add(`psych-button`);
+                    this.classList.remove(`black-button`);
+
+                });
+            });
+
+
+
             //Choose color button
-            //if
+
             document.getElementById(`chooseColor`).addEventListener(`input`, function() {
                 divCol.addEventListener("mouseenter", function(){
                     this.style.backgroundColor = `${chooseColor()}`;
@@ -47,39 +55,22 @@ function createGrid(widthHeight){
 
             document.getElementById(`erase-button`).addEventListener(`click`, function() {
                 divCol.addEventListener("mouseenter", function(){
-                    this.style.backgroundColor = `rgb(156, 149, 136)`;
+                    this.classList.remove(`psych-button`);
+                    this.classList.remove(`black-button`);
                 });
             });
+            
             divRow.appendChild(divCol);
+
+            
         }
+        
     }
 }
 
-createGrid(3);
+createGrid(5);
 
 
-
-
-
-
-
-
-// slider.oninput = function changeGridSize() {
-//     let sliderValue = document.getElementById(`myRange`);
-//     sliderValue = sliderValue.value;
-//     return(sliderValue);
-// }
-
-
-// let slider = document.getElementById(`myRange`);
-
-// slider.oninput = function() {
-//     createGrid(this.value);
-// }
-
-// document.getElementById(`myRange`).addEventListener(`input`, function(){
-//     createGrid(this.value);
-// });
 
 
 
@@ -102,3 +93,10 @@ function randomColor() {
 function resetButton() {
 
 }
+
+
+
+
+
+
+
