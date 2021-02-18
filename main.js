@@ -1,5 +1,3 @@
-
-
 //Generate grid to size of user input
 
 function createGrid(widthHeight){
@@ -12,19 +10,21 @@ function createGrid(widthHeight){
         for (let y = 0; y < widthHeight; y++){
             let divCol = document.createElement(`div`);
             divCol.classList.add(`divCol`);
+            divRow.appendChild(divCol);
 
 
             //default hover
-            // divCol.addEventListener("mouseenter", function(){
-            //     this.style.backgroundColor = `black`;
-            // });
+            divCol.addEventListener("mouseenter", function(){
+                this.classList.add(`black-button`);
+                this.classList.remove(`psych-button`);
+            });
 
 
             //black button
             document.getElementById(`black-button`).addEventListener(`click`, function() {
                 divCol.addEventListener("mouseenter", function(){
-                    this.classList.add(`black-button`);
-                    this.classList.remove(`psych-button`);
+                    this.style.backgroundColor = `black`;
+
 
                 });
             });
@@ -33,14 +33,9 @@ function createGrid(widthHeight){
 
             document.getElementById(`psych-button`).addEventListener(`click`, function() {
                 divCol.addEventListener("mouseenter", function(){
-                    //this.style.backgroundColor = `#${randomColor()}`;
-                    this.classList.add(`psych-button`);
-                    this.classList.remove(`black-button`);
-
+                    this.style.backgroundColor = `#${randomColor()}`;
                 });
             });
-
-
 
             //Choose color button
 
@@ -55,24 +50,15 @@ function createGrid(widthHeight){
 
             document.getElementById(`erase-button`).addEventListener(`click`, function() {
                 divCol.addEventListener("mouseenter", function(){
-                    this.classList.remove(`psych-button`);
-                    this.classList.remove(`black-button`);
-                });
-            });
-            
-            divRow.appendChild(divCol);
+                    this.style.backgroundColor = `rgb(156, 149, 136)`;
 
-            
-        }
-        
+                });
+            }); 
+        }  
     }
 }
 
 createGrid(5);
-
-
-
-
 
 //return the color choosen by the user
 function chooseColor(){
@@ -86,13 +72,10 @@ function chooseColor(){
 function randomColor() {
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     console.log(randomColor);
-
     return randomColor;
 }
 
-function resetButton() {
 
-}
 
 
 
