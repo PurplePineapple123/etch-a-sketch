@@ -49,7 +49,7 @@ table {
 }
 
 button {
-    padding: 15px;
+    padding: 10px 15px 10px 15px;
     font-family: 'Sriracha', cursive;
     font-size: 18px;
 }
@@ -73,7 +73,7 @@ label {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 2%;
     font-family: 'Pacifico', cursive;
 }
 
@@ -221,19 +221,24 @@ span.fade{
       -webkit-appearance: none; /* Override default look */
       appearance: none;
       width: 25px; /* Set a specific slider handle width */
-      height: 25px; /* Slider handle height */
-      background: #4CAF50; /* Green background */
+      height: 50px; /* Slider handle height */
+      background: rgb(173, 25, 25); 
       cursor: pointer; /* Cursor on hover */
     }
   
     .slider::-moz-range-thumb {
       width: 25px; /* Set a specific slider handle width */
       height: 25px; /* Slider handle height */
-      background: #4CAF50; /* Green background */
       cursor: pointer; /* Cursor on hover */
     }
 
     #black-button:hover{
         color: white;
         background-color: black;
+    }
+
+    #customColor {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
     }

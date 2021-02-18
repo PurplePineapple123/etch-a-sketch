@@ -118,7 +118,7 @@ document.getElementById(`psych-button`).addEventListener(`click`, function () {
 
 document.getElementById(`erase-button`).addEventListener(`click`, function () {
     psychColor = false;
-    color = `rgb(156, 149, 136)`;
+    color = `rgb(228, 228, 228)`;
 
 });
 
