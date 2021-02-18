@@ -28,8 +28,6 @@ function createGrid(widthHeight) {
     }
 }
 
-createGrid(15);
-
 //return the color choosen by the user
 function chooseColor() {
     let color = document.getElementById(`chooseColor`).value;
@@ -79,7 +77,7 @@ document.getElementById(`chooseColor`).addEventListener(`input`, function () {
 }, false);
 
 
-
+//reset colors on grid 
 document.getElementById(`reset-button`).addEventListener(`click`, function () {
     resetButton();
 
@@ -93,4 +91,18 @@ function resetButton() {
     gridArray.forEach(element => {
         element.style.backgroundColor = `rgb(156, 149, 136)`;
     });
+    document.getElementById(`myRange`).value = 25;
+    createGrid(25);
 }
+
+//grid size slider
+let slider = document.getElementById(`myRange`);
+
+slider.oninput = function() {
+    createGrid(this.value);
+
+}
+
+
+//default grid size
+createGrid(25);
