@@ -19,19 +19,11 @@ function createGrid(widthHeight){
                 if (psychColor) {
                     color = `#${randomColor()}`;
                 }
-                
+                if (!color) {
+                    color = `black`;
+                }
                 this.style.backgroundColor = color;
             });
-
-            // //default hover
-            // divCol.addEventListener("mouseenter", function(){
-            //     this.style.backgroundColor = `black`;
-
-            // });
-
-           
-
-            
         }  
     }
 }
@@ -87,12 +79,3 @@ document.getElementById(`chooseColor`).addEventListener(`input`, function() {
     color = chooseColor();
 }, false);
 
-
-// //eraser button
-
-// document.getElementById(`erase-button`).addEventListener(`click`, function() {
-//     divCol.addEventListener("mouseenter", function(){
-//         this.style.backgroundColor = `rgb(156, 149, 136)`;
-
-//     });
-// }); 
