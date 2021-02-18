@@ -1,12 +1,36 @@
+window.onload = beginningAnimation();
 let color = "";
 let psychColor = false;
 
 //animating initial text
 
-function textAnimate(textId) {
-const text = document.querySelector(`.animate`);
-const strText = text.textContent;
-const splitText = strText.split("");
+
+function beginningAnimation() {
+    textAnimate();
+
+    const title = document.querySelector(`#title`);
+    const desc1 = document.querySelector(`#desc1`);
+
+    title.classList.remove(`animate`);
+    desc1.classList.add(`animate`);
+
+
+textAnimate();
+
+
+
+
+}
+
+
+
+
+
+
+function textAnimate() {
+let text = document.querySelector(`.animate`);
+let strText = text.textContent;
+let splitText = strText.split("");
 text.textContent = "";
 
 console.log(splitText);
@@ -37,7 +61,6 @@ function complete() {
 }
 }
 
-textAnimate();
 
 
 

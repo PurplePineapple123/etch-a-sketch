@@ -82,7 +82,7 @@ label {
 }
 
 #desc1 {
-    font-size: 25px;
+    font-size: 35px;
 
 }
 
@@ -227,4 +227,9 @@ span.fade{
       height: 25px; /* Slider handle height */
       background: #4CAF50; /* Green background */
       cursor: pointer; /* Cursor on hover */
+    }
+
+    #black-button:hover{
+        color: white;
+        background-color: black;
     }
